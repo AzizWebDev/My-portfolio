@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azizbek | Frontend Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a1a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* ===== NAVIGATSIYA ===== */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #1a1a2e;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* ===== BOSH QISM (HERO) ===== */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        /* ===== RASM ===== */
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #667eea;
+            box-shadow: 0 0 40px rgba(102, 126, 234, 0.3);
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #aaa;
+            max-width: 600px;
+            margin-bottom: 25px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid #667eea;
+            color: #667eea;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: #667eea;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* ===== MAHORATLAR ===== */
+        .section-title {
+            font-size: 30px;
+            text-align: center;
+            margin: 50px 0 25px;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .skill-card {
+            background: #1a1a2e;
+            padding: 18px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #2a2a4a;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+        }
+
+        .skill-card .icon {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .skill-card .name {
+            font-weight: 600;
+            color: #ddd;
+            font-size: 14px;
+        }
+
+        /* ===== LOYIHALAR ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .project-card {
+            background: #1a1a2e;
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #2a2a4a;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .project-card a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== KONTAKT ===== */
+        .contact {
+            text-align: center;
+            margin: 50px 0 20px;
+        }
+
+        .contact p {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .social-links a {
+            color: #aaa;
+            font-size: 28px;
+            margin: 0 12px;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #667eea;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            border-top: 1px solid #1a1a2e;
+            color: #555;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        /* ===== TELEFON UCHUN ===== */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 32px; }
+            .profile-img { width: 130px; height: 130px; }
+            nav { flex-direction: column; gap: 10px; }
+            .nav-links a { margin: 0 12px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- NAVIGATSIYA -->
+        <nav>
+            <div class="logo">AzizDev</div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Skills</a>
+                <a href="#">Projects</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+
+        <!-- BOSH QISM + RASM -->
+        <div class="hero">
+
+            <!-- ⬇️ RASM JOYI ⬇️ -->
+            <!-- O'Z RASMINGIZNI MANZILINI QO'YING -->
+            <img src="./AzizDev.png" alt="Azizbek" class="profile-img">
+
+            <h1>Azizbek</h1>
+            <p>Frontend Web Developer | HTML, CSS, JavaScript</p>
+
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary">My Projects</a>
+                <a href="#" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+
+        <!-- MAHORATLAR -->
+        <h2 class="section-title">🚀 My <span>Skills</span></h2>
+        <div class="skills-grid">
+            <div class="skill-card"><div class="icon">📄</div><div class="name">HTML</div></div>
+            <div class="skill-card"><div class="icon">🎨</div><div class="name">CSS</div></div>
+            <div class="skill-card"><div class="icon">⚡</div><div class="name">JavaScript</div></div>
+            <div class="skill-card"><div class="icon">📱</div><div class="name">Responsive</div></div>
+        </div>
+
+        <!-- LOYIHALAR -->
+        <h2 class="section-title">💼 My <span>Projects</span></h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>🌐 First Website</h3>
+                <p>My first website on the internet. Built with HTML, CSS, JS.</p>
+                <a href="https://khiva.qurl.uz" target="_blank">View Project →</a>
+            </div>
+            <div class="project-card">
+                <h3>📱 Portfolio</h3>
+                <p>This portfolio website you're looking at right now.</p>
+                <a href="#">View Project →</a>
+            </div>
+            <div class="project-card">
+                <h3>🚀 Landing Page</h3>
+                <p>A modern landing page for a business or startup.</p>
+                <a href="#">View Project →</a>
+            </div>
+        </div>
+
+        <!-- KONTAKT -->
+        <div class="contact">
+            <h2 class="section-title">📬 <span>Contact</span></h2>
+            <p>Email: azizbekrozmetov13@gmail.com</p>
+            <div class="social-links">
+                <a href="#">📧</a>
+                <a href="https://khiva.qurl.uz">💬</a>
+                <a href="#">🐙</a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            &copy; 2026 Azizbek. Made with ❤️
+        </footer>
+
+    </div>
+</body>
+                  </html>
